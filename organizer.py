@@ -11,7 +11,7 @@ except:
     pass
 
 def organize_for_iphone():
-    current_dir = os.getcwd()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     target_dir = os.path.join(current_dir, "아이폰_전송용_음악")
     
     if not os.path.exists(target_dir):

@@ -209,7 +209,8 @@ def select_language():
 
 def process_url(url, model_name, language):
     """전체 처리 파이프라인"""
-    output_dir = os.path.join(os.getcwd(), "변환결과")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(base_dir, "변환결과")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 

@@ -14,8 +14,9 @@ def download_latest_kpop_100():
     # 현재 날짜로부터 3개월 전 날짜 계산 (YYYYMMDD 형식)
     three_months_ago = (datetime.now() - timedelta(days=90)).strftime('%Y%m%d')
 
-    # 현재 작업 디렉토리의 변환결과 폴더에 저장
-    current_path = os.path.join(os.getcwd(), '변환결과')
+    # 스크립트 위치 기준 변환결과 폴더에 저장
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    current_path = os.path.join(base_dir, '변환결과')
     os.makedirs(current_path, exist_ok=True)
     
     print(f"--- 최신 가요 100곡 다운로드 시작 (기준일: {three_months_ago} 이후) ---")

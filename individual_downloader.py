@@ -13,7 +13,8 @@ except:
 def download_100_individual_songs():
     # 3개월 전 날짜 계산
     three_months_ago = (datetime.now() - timedelta(days=90)).strftime('%Y%m%d')
-    current_path = os.path.join(os.getcwd(), '변환결과')
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    current_path = os.path.join(base_dir, '변환결과')
     os.makedirs(current_path, exist_ok=True)
     
     print(f"--- 개별 곡 100개 다운로드 시작 (기준: {three_months_ago} 이후 신곡) ---")

@@ -24,8 +24,9 @@ def clean_filename(filename):
     return " ".join(new_name.split()).strip()
 
 def process_url(url):
-    # 저장 폴더: 변환결과
-    target_dir = os.path.join(os.getcwd(), "변환결과")
+    # 저장 폴더: 스크립트 위치 기준 변환결과
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    target_dir = os.path.join(base_dir, "변환결과")
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
 

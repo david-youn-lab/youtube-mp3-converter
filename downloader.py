@@ -11,7 +11,8 @@ except:
 
 def download_youtube_as_mp3(url):
     # 저장 경로 설정
-    download_path = os.path.join(os.getcwd(), 'downloads')
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    download_path = os.path.join(base_dir, 'downloads')
     os.makedirs(download_path, exist_ok=True)
 
     # yt-dlp 옵션 설정

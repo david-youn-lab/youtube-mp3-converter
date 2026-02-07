@@ -44,7 +44,8 @@ def clean_filename(filename):
     return new_name
 
 def download_music(url):
-    target_dir = os.path.join(os.getcwd(), "변환결과")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    target_dir = os.path.join(base_dir, "변환결과")
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
 

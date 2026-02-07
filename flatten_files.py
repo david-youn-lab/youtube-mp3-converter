@@ -10,7 +10,8 @@ except:
     pass
 
 def flatten_music_folder():
-    target_dir = os.path.join(os.getcwd(), "아이폰_전송용_음악")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    target_dir = os.path.join(base_dir, "아이폰_전송용_음악")
     
     if not os.path.exists(target_dir):
         print("정리할 폴더가 존재하지 않습니다.")
